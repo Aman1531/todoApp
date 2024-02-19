@@ -6,13 +6,24 @@
     <title>Todo App Demo</title>
     <script type="module" src="./js/main.js"></script>
   </head>
-  <body>
+  <body >
     <div class="container py-4 px-3 mx-auto">
   
 <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addItem">
   Add Item
 </button>
-
+<div class="py-5 px-5 mx-5 row align-items-start">
+  <div class="col">
+    <h4>To Do </h4>
+    <ul id="todoList"></ul>
+  </div>
+  <div class="col">
+    <h4>Doing</h4>
+  </div>
+  <div class="col">
+    <h4>Done</h4>
+  </div>
+</div>
 <!-- Modal -->
 <div class="modal fade" id="addItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
