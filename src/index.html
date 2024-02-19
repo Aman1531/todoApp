@@ -8,8 +8,44 @@
   </head>
   <body>
     <div class="container py-4 px-3 mx-auto">
-      <button type="button" class="btn btn-dark">Add Item</button>
+  
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addItem">
+  Add Item
+</button>
 
+<!-- Modal -->
+<div class="modal fade" id="addItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Item info</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+        <div class="input-group mb-3">
+          <label for="title" class="input-group-text">Title</label>
+          <input type="text" class="form-control" id="title" >
+        </div>
+        <div class="input-group mb-3">
+          <label for="desc" class="input-group-text">Description</label>
+          <textarea class="form-control" id="desc" rows="3"></textarea>
+        </div>
+        <div class="input-group mb-3">
+          <label for="endDate" class="input-group-text">End Date</label>
+          <input type="date" class="form-control" id="endDate" >
+          <label for="priority" class="input-group-text">Priority</label>
+          <input type="number" class="form-control" id="priority" value=0 >
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="itemAdd" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
   </body>
 </html>
