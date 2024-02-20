@@ -31,7 +31,7 @@ db.map((item) => {
     list = doing
     if(item.status == 2)
     list = done
-console.log(item.priority)
+
     var li = document.createElement("li");
     li.className="list-group-item" 
     li.innerHTML =  '<div class="d-flex w-100 justify-content-between">\
@@ -41,15 +41,30 @@ console.log(item.priority)
 <a href="#addItem" class="btn btn-link" data-bs-toggle="modal" data-id='+ item.id + ' data-title='+ item.title  + ' data-desc= "' + btoa(item.description) + '" data-enddate='+ item.enddate + ' data-priority=' + item.priority + ' data-status='+ item.status +'>\
 <i class="bi bi-pen"></i></a>';
 
+var a = document.createElement('a')
+a.className="btn-link"
+a.innerHTML = '<i class="bi bi-x"></i>';
+a.id = item.id
+
+a.addEventListener("click",del,false); 
+
+li.appendChild(a) 
+
 list.appendChild(li);
 
 });
 };
-window.onload = displayLists()
+window.onload = displayLists();
 
-const itemAdd = document.getElementById('item-save');
+function del() {
+    db = db.filter( (item) => item.id != this.id)
+    localStorage.setItem("db",JSON.stringify(db))
+    location.reload();
+}
 
-itemAdd.addEventListener("click",(e) => console.log('save'));
+//const itemAdd = document.getElementById('item-save');
+
+//itemAdd.addEventListener("click",(e) => console.log('save'));
 
 function save(e)  {
     let index = -1
