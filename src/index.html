@@ -9,19 +9,21 @@
   <body >
     <div class="container py-4 px-3 mx-auto">
   
-<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addItem">
+<button type="button" id="test" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addItem">
   Add Item
 </button>
 <div class="py-5 px-5 mx-5 row align-items-start">
   <div class="col">
     <h4>To Do </h4>
-    <ul id="todoList"></ul>
+    <ul id="todo" class="list-group"></ul>
   </div>
   <div class="col">
     <h4>Doing</h4>
+    <ul id="doing" class="list-group"></ul>
   </div>
   <div class="col">
     <h4>Done</h4>
+    <ul id="done" class="list-group"></ul>
   </div>
 </div>
 <!-- Modal -->
@@ -33,26 +35,38 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="form">
         <div class="input-group mb-3">
           <label for="title" class="input-group-text">Title</label>
-          <input type="text" class="form-control" id="title" >
+          <input type="text" class="form-control" id="title" required>
         </div>
         <div class="input-group mb-3">
           <label for="desc" class="input-group-text">Description</label>
-          <textarea class="form-control" id="desc" rows="3"></textarea>
+          <textarea class="form-control" id="desc" rows="3" required></textarea>
         </div>
         <div class="input-group mb-3">
           <label for="endDate" class="input-group-text">End Date</label>
-          <input type="date" class="form-control" id="endDate" >
+          <input type="date" class="form-control" id="enddate" required>
+          
+        </div>
+        <div class="input-group mb-3 ">
           <label for="priority" class="input-group-text">Priority</label>
           <input type="number" class="form-control" id="priority" value=0 >
+         </div>
+         <div class="input-group mb-3 ">
+          <label for="status" class="input-group-text">Status</label>
+         
+        <select class="form-select" id="status">
+          <option value="0">To Do</option>
+          <option value="1">Doing</option>
+          <option value="2">Done</option>
+        </select>
         </div>
-        </form>
+      </div>
+       <input id="id" type="hidden" value=-1 />
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="itemAdd" class="btn btn-primary">Save changes</button>
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="item-save" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
