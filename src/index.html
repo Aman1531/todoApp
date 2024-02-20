@@ -14,7 +14,11 @@
 </button>
 <div class="py-5 px-5 mx-5 row align-items-start">
   <div class="col">
-    <h4>To Do </h4>
+    <h4>To Do </h4><a href=# id="sort" onclick="custom_sort()"><i class="bi bi-sort-down-alt"></i></a>
+    <select class="form-select w-50"  id="sortBy">
+      <option value="priority">Priority</option>
+      <option value="enddate">End Date</option>
+    </select>
     <ul id="todo" class="list-group"></ul>
   </div>
   <div class="col">
@@ -73,4 +77,25 @@
 </div>
     </div>
   </body>
+  <script>
+    function custom_sort() {
+    var sorted_field = document.getElementById('sortBy').value
+    db = JSON.parse(localStorage.getItem("db"))
+    if (sorted_field == 'priority')
+      db.sort(priority_compare)
+    else
+      db.sort(enddate_compare)
+    localStorage.setItem("db",JSON.stringify(db))
+   location.reload();
+
+}
+function priority_compare(a,b) {
+  return a.priority  - b.priority;
+}
+
+function enddate_compare(a,b) {
+  return new Date(a.enddate) - new Date(b.enddate);
+}
+
+  </script>
 </html>

@@ -54,6 +54,7 @@ list.appendChild(li);
 
 });
 };
+
 window.onload = displayLists();
 
 function del() {
@@ -61,7 +62,10 @@ function del() {
     localStorage.setItem("db",JSON.stringify(db))
     location.reload();
 }
-
+function custom_sort() {
+    var sorted_field = document.getElementById('sortBy').value
+    console.log(sorted_field)
+}
 //const itemAdd = document.getElementById('item-save');
 
 //itemAdd.addEventListener("click",(e) => console.log('save'));
