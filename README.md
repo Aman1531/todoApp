@@ -12,3 +12,12 @@ Another framwork I found intesting is backbone.js <br/>
 Top 10 dev resources <br/>
 1) github
 2) reddit
+3) medium
+4) geeksforgeeks
+5) leetcode
+6) hackerrank
+7) FreeCodeCamp
+8) ocw
+9) books
+10) blogs
+    
